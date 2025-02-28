@@ -13,8 +13,12 @@ async def get_page(request: Request):
 
 @router.get('/login')
 async def get_page_login(request: Request):
-    return templates.TemplateResponse("test.html", {"request": request})
+    return templates.TemplateResponse("login.html", {"request": request})
 
 @router.get('/search?query')
 async def get_page_search_films(request: Request):
     return templates.TemplateResponse("search_films.html", {"request": request})
+
+@router.get('/film/{id}')
+async def get_page_film(request: Request):
+    return templates.TemplateResponse("film.html", {"request": request})
