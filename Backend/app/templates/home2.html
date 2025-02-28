@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Фильмы</title>
+<style>
+body {
+  background-color: #1a293d; 
+  color: white;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #263b54; 
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;  
+  align-items: center;
+}
+
+.search-bar {
+  flex: 0 1 40%; 
+  margin: 0 auto; 
+  max-width: 400px; 
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #445c79;
+  background-color: #2e4461;
+  color: white;
+  border-radius: 5px;
+}
+
+.login-button {
+  padding: 8px 15px;
+  background-color: #3e5a7e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.movie-container {
+  display: flex;
+  overflow-x: auto; 
+  padding: 20px;
+}
+
+.movie-poster {
+  width: 150px; 
+  margin-right: 10px; 
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.movie-poster:last-child {
+    margin-right:0;
+}
+
+.profile-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #557799; 
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px; 
+    margin-left: 10px;
+}
+
+.header > div:last-child { 
+    display: flex;
+    align-items: center; 
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div></div>
+  <div class="search-bar">
+    <form id="searchFrom" action="/search", method="GET">
+          <input type="text" id="searchInput" name="query" placeholder="фильмы, сериалы, персоны">
+    </form>
+  </div>
+  <div>
+    <form action='http://127.0.0.1:8000/login/'>
+      <button class="login-button">Войти</button>
+    </form>
+
+    <span class="profile-icon">👤</span>
+  </div>
+</div>
+
+<!-- <div class="movie-container">
+  <img class="movie-poster" src="https://via.placeholder.com/150x225/007bff/FFFFFF?text=Jaws" alt="Jaws">
+  <img class="movie-poster" src="https://via.placeholder.com/150x225/007bff/FFFFFF?text=Avengers" alt="Avengers">
+  <img class="movie-poster" src="https://via.placeholder.com/150x225/007bff/FFFFFF?text=Penguins" alt="Penguins">
+  <img class="movie-poster" src="https://via.placeholder.com/150x225/007bff/FFFFFF?text=Harry Potter" alt="Harry Potter">
+  <img class="movie-poster" src="https://via.placeholder.com/150x225/007bff/FFFFFF?text=Alita" alt="Alita">
+  <img class="movie-poster" src="https://via.placeholder.com/150x225/007bff/FFFFFF?text=Joker" alt="Joker">
+  <img class="movie-poster" src="https://via.placeholder.com/150x225/007bff/FFFFFF?text=Dragon" alt="Dragon">
+  <img class="movie-poster" src="https://via.placeholder.com/150x225/007bff/FFFFFF?text=Avatar" alt="Avatar">
+  <img class="movie-poster" src="https://via.placeholder.com/150x225/007bff/FFFFFF?text=Five Nights" alt="Five Nights">
+</div> -->
+
+</body>
+</html>
