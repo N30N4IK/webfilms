@@ -105,28 +105,19 @@ body {
     background-color: rgba(75, 103, 137, 1);
     display: flex;
     overflow-x: auto;
-    padding: 0 10px 40px;
+    padding: 0 10px 50px;
     width: 100%;
     height: 230px;
 }
 .movie-container {
     flex: 0 0 auto;
     margin: 1px;
-    padding: 35px;
+    padding: 25px;
     max-width: 500px;
-    margin-right: 15px;
+    margin-right: 3px;
     text-align: left;
 }
-.movie-button {
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    margin-right: 10px;
-    position: relative;
-    right: 40px;
-}
+
 .movie-poster {
     width: 100%;
     height: 100%;
@@ -139,16 +130,30 @@ body {
 .movie-details {
     font-size: 14px;
     color: #fff;
-    margin-top: 5px;
+    margin-top: 3px;
 }
 
 .movie-title {
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
     margin-top: 0px;
 }
 
 .movie-tags {
     color: rgba(255, 255, 255, 0.5);
     font-size: 12px;
+}
+.movie-button {
+    display: block;
+    background: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 5px;
+    margin-bottom: 35px;
+    position: relative;
+    top: 0px;
 }
