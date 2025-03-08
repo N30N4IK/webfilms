@@ -9,29 +9,95 @@
 <body>
 <div class="container">
     <h1>Авторизация</h1>
-
     <div class="toggle-buttons">
         <button class="toggle-button active" id="phone-button">Телефон</button>
         <button class="toggle-button" id="email-button">Email</button>
     </div>
-
-    <input type="text">
-    <button class="enter-button">Войти</button>
+    <label for="auth-value"></label>
+    <input type="text" id="auth-value" name="auth-value" placeholder="Введите номер телефона" required>
+    <input type="hidden" id ='auth-type' name="auth-type" value="phone">
+    <button type="submit" class="enter-button" id="enter-button">Войти</button>
+    <p id="error-message" style="color: red; display: none;"></p>
 </div>
 
 <script>
-    const phoneButton = document.getElementById("phone-button");
-    const emailButton = document.getElementById("email-button");
+    document.addEventListener('DOMContentLoader', () => {
+        const phoneButton = document.getElementById("phone-button");
+        const emailButton = document.getElementById("email-button");
+        const authInput = document.getElementById('auth-value');
+        const authTypeInput = document.getElementById('auth-type');
+        const authForm = document.getElementById('authForm');
+        const enterButton = document.getElementById("enter-button");
+        const errorMessage = document.getElementById("error-message");
 
-    phoneButton.addEventListener("click", () => {
-        phoneButton.classList.add("active");
-        emailButton.classList.remove("active");
-    });
+        phoneButton.addEventListener("click", () => {
+            phoneButton.classList.add("active");
+            emailButton.classList.remove("active");
+            authInput.placeholder = 'Введите номер телефона';
+            authTypeInput.value = 'phone';
+            errorMessage.style.display = 'none';
+        });
 
-    emailButton.addEventListener("click", () => {
-        emailButton.classList.add("active");
-        phoneButton.classList.remove("active");
-    });
+        emailButton.addEventListener("click", () => {
+            emailButton.classList.add("active");
+            phoneButton.classList.remove("active");
+            authInput.placeholder = 'Введите email';
+            authTypeInput.value = 'email';
+            errorMessage.style.display = 'none';
+        });
+
+        enterButton.addEventListener("click", async () => {
+            const inputValue = authInput.value;
+            let isValid = false;
+            if (authType === "phone") {
+                    const phoneRegex = /^\+\d{1,3}\d{7,}$/;
+                    isValid = phoneRegex.test(inputValue);
+                    if (!isValid) {
+                        errorMessage.textContent = "Пожалуйста, введите корректный номер телефона (11 цифр).";
+                    }
+                } else if (authType === "email") {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    isValid = emailRegex.test(inputValue);
+                    if (!isValid) {
+                        errorMessage.textContent = "Пожалуйста, введите корректный email.";
+                    }
+                }
+
+                if (isValid) {
+                    errorMessage.style.display = "none";
+                    const authValue = authInput.value;
+                    const authType = authTypeInput.value;
+                    const formData = {
+                        auth_value: authValue,
+                        auth_type: authType
+                    };
+                try {
+                    const response = await fetch('/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    const data = await response.json();
+                    if (response.ok) {
+                        window.location.href = "/"
+                    } else {
+                        errorMessage.textContent = data.detail;
+                        errorMesage.style.display = 'block';
+                    }
+                } catch (error) {
+                    errorMessage.textContent = 'Произошла ошибка';
+                    errorMessage.style.display = 'block';
+                    conole.error('Ошибка', error);
+                }
+            } else {
+                errorMessage.style.display = 'block'
+            }
+        });
+    })
+    
 </script>
 
 </body>

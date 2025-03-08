@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фильмы и сериалы</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/Home.css">
+</head>
+
+
+<div class="container">
+    <div class="header">
+        <i class="fas fa-bars menu-icon"></i>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Фильмы, сериалы, персоны">
+            <i class="fas fa-search search-icon"></i>
+            <i class="fas fa-ellipsis-v menu-dots"></i>
+        </div>
+        <div class="login-section">
+            <button class="login-button" onclick="window.location.href='http://127.0.0.1:8000/login';">Войти</button>
+            <i class="far fa-user user-icon"></i>
+        </div>
+    </div>
+    
+    
+        <h2 class="collection-title">Collection</h2>
+    <div class="collection-container">
+
+            <div class="movie-container">
+                <button class="movie-button" onclick="window.location.href='http://127.0.0.1:8000/film/{1}'">
+                    <img class="movie-poster" src="https://avatars.mds.yandex.net/get-kinopoisk-image/1773646/add2980b-2d3d-4f49-87e0-4c7edfa0c9cc/1920x"
+                        alt="Jaws">
+                
+                <div class="movie-details">
+                    <div class="movie-title">Jaws</div>
+                    <p class="movie-details">1975</p>
+                    <p class="movie-tags">#horror #thriller</p>
+                </div>
+            </button> 
+            </div>
+
+            <div class="movie-container">
+                <button class="movie-button" onclick="window.location.href='http://127.0.0.1:8000/film/{2}'">
+                    <img class="movie-poster" src="https://s3-alpha-sig.figma.com/img/3369/1b21/02badc1d41a57ac90df767b454bbc891?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Sk5QcJsB72BC~yBH2yxZ2mWEuKTU0GdG18i13Yr9Oh1KsOEs4O09RBw4Jcr8ATm0N1WZSOqC2n9vIEEhxkrkdeX~8j9HSfSUSQobqzfsQQz6iGjS-4RFJEyPbRGz07km25Jxmg94TG5NgXDvjsYDGMO5tA05P0WavEuGvnVvr8Qjrt-p0cBJmyYG9hhK~sVS6MVZcgGAQCSsqCBct39S6COkazJEWBp3Yfhul9N2-AZlnx4goKv0kxei~yeMMoPOreWFsVjuzVPOqI1s33sfChfkPnz54ykPFVise~8aDHtXXmmguGbV3PK4ix0ThrDTj7uBqveH9WYFvFdZ5iI~Bg__"
+                        alt="Avengers">
+                <div class="movie-details">
+                    <div class="movie-title">Avengers</div>
+                    <p class="movie-details">2018</p>
+                    <p class="movie-tags">#action #fantasy</p>
+                </div>
+                </button>
+            </div>
+
+            <div class="movie-container">
+                <button class="movie-button" onclick="window.location.href='http://127.0.0.1:8000/film/{3}'">
+                <img class="movie-poster" src="https://s3-alpha-sig.figma.com/img/3d56/2104/3e1815d2026cfd2a3e3bc1fba938ed17?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=ibUy5ldcpDVjohM6abVEio-U-Flf45nPfSI7B5g5elDd~XNPWbI35h7d7wBTWXVAL7eawZ-tm~~rrDxqlMiW9eY4Nezq9cIwMFakZr1Xf6eS1TWB1bylr8rpd191mBPO2mJQtW3MOLxkPIBAZBbq3byWT5k7eCsUpc4EX0hrSdVsv9CHiNVZvw11Z8IuzyDO~apeakaVyJyANghOgI40eE39CdCf870L0xyb1j5I4qLSOuAgR07tsfnYpqmhKypp4-zoT78zpGbH3ZM5Zfj9U7tXHbNsM8Y4HZoyWGB0TXhRMD3KXUZl-onVX8AicAO9S3KBf3ryL23cS-HAbWIK3Q__"
+                    alt="Kill Bill">
+                <div class="movie-details">
+                    <div class="movie-title">Kill Bill</div>
+                    <p class="movie-details">2003</p>
+                    <p class="movie-tags">#action #crime</p>
+                </div>
+                </button>
+            </div>
+
+            <div class="movie-container">
+                <button class="movie-button" onclick="window.location.href='http://127.0.0.1:8000/film/{4}'">
+                <img class="movie-poster" src="https://s3-alpha-sig.figma.com/img/18fd/7120/e2fd4e3b8e7bc1451c91183713a22fd6?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=bRljFt7vFwx7uBDKRloj9oHjcswotVQBkz-BuYlU6I1ex-~fvFDY~p3mMnW8wvCWv7bUcvj8ZAwJm1EJeLunmM9ywgTgJwKdU1i5avlp5MXL9q02wfTwQEKgrMHgfl0-DOUkmS1aBoy9YpV8hsOp722ZGEyhGAx8a3If18F~Uo9Wcrce3C7GDqBMkY-rqRp2gsx81DLHLoSAHJkAODcqRgsQhKUkjT7HqBuslQMjGJGwXRNTjMA4AV32OOKFeRAFF94op04RfI3heb4bXIQ6pKzOkTBs3ahwvWf~~P0rcZN85urlcWXYBPVYFIwduiN7CY2~BNCwYHgp88IGfrwOzA__"
+                    alt="Harry Potter">
+                <div class="movie-details">
+                    <div class="movie-title">Harry Potter</div>
+                    <p class="movie-details">2001</p>
+                    <p class="movie-tags">#family</p>
+                </div>
+                </button>
+            </div>
+
+            <div class="movie-container">
+                <button class="movie-button" onclick="window.location.href='http://127.0.0.1:8000/film/{5}'">
+                <img class="movie-poster" src="https://s3-alpha-sig.figma.com/img/db4e/45a4/b6d0d058b28e3f66e2813fccd44a65de?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=sZdmDLUNdkzPdPjTsv8LqqAHLHHKn~KZUfIMApVAjxQ~AKRgFg6Nfc~x21RPlofSyayWKoBqwfidz~uI0Cj9ypjMt92GuVQd007NgQ~NGJ-SwfmOeWIclkvhS2y2AFUszHp61WLoGB~5lyL8ar1gmk9J6Nreskv8q8xqLTZMJMabQo64NxOf3zGvVxa-IcUXvWYnXSxFByqpDlXHL~AVjaNXDlo4aukNCXWgS4hqYbGre8tZHtIxdS9hi56AlXId9aC5ptJFtlgZHmVEDZOB~u2Aa-mCHtse~MLp0PLkKx8uPtLz1mJHmGFWdJFEveVzHumXGg~ZyN6qlsGltZwS4Q__"
+                    alt="Alita">
+                <div class="movie-details">
+                    <div class="movie-title">Alita</div>
+                    <p class="movie-details">2019</p>
+                    <p class="movie-tags">#fantasy #action</p>
+                </div>
+                </button>
+            </div>
+
+            <div class="movie-container">
+                <button class="movie-button" onclick="window.location.href='http://127.0.0.1:8000/film/{6}'">
+                <img class="movie-poster" src="https://s3-alpha-sig.figma.com/img/8995/ed8f/41c90746de1a1e3aeafe68f47925acdc?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=ZP6FSGyCBXMPP5MHWiayyu6-0K1sL2g2cULfhjgN4O9~gyjoyQYUppdf7L82qGihahVAavhg1oONr7xEqXXk6TwE~UMPxTZCPmlF3o3SiM9TsBtzhSwKzkSyf1HT-yiF4SQBMoBnBffuirTwrAv7SY0ktLZrs2T2BEFCbpDzvGRd~0qdEJRvbvVeReUS9HhZMIGj4GW9Gdyg7AvlwD4eOeQ5T2vO~mG75Hye65yMereq7rAIslvdtkZc08eThqduHwnsmkVglBeS1yWmXAf1I-mlf2oMMFWy-mXGKilQEQ~CZnM~bjjlnlj3pOP0oQVHTxoenkkcNkEwCsbOMUT6cQ__"
+                    alt="Venom">
+                <div class="movie-details">
+                    <div class="movie-title">Venom</div>
+                    <p class="movie-details">2018</p>
+                    <p class="movie-tags">#action #sci-fi</p>
+                </div>
+                </button>
+            </div>
+
+            <div class="movie-container">
+                <button class="movie-button" onclick="window.location.href='http://127.0.0.1:8000/film/{7}'">
+                <img class="movie-poster" src="https://s3-alpha-sig.figma.com/img/1d49/0321/0b7e489d008f656168bf00e25cb90a18?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=STqjDIbdH7sItvR0wXFT0VGekR7i9eonjOY9a6lril-x04E2lsx5Fu0VV7RczFnQncfi4-mQgX7NvARhgdTtepsR-aXt-~hG-ZYCMdsFWFx~XWbNcMTz6N0luI3KazKboAPXyRsSJNfz91BpLZa0xry6PXOceZvBPXDYxl70czZU~41KgC3lWNnlRayHl7WpEr~jSpiL5qJ2GeD35T1n~jitMh1q1OM1g-WN5VOk9seU5x1H9yNVAFxX5SAVQAd3ChW8A4KlBAMwCni--4uabGA-iJczVZ-cJ2qt6NowhvaabygTSxeApu-g0TM-ugmcuoNgI0k2F9ErYOg6YrZgyQ__"
+                    alt="Dragon">
+                <div class="movie-details">
+                    <div class="movie-title">Dragon</div>
+                    <p class="movie-details">2010</p>
+                    <p class="movie-tags">#animation #family</p>
+                </div>
+                </button>
+            </div>
+
+            <div class="movie-container">
+                <button class="movie-button" onclick="window.location.href='http://127.0.0.1:8000/film/{8}'">
+                <img class="movie-poster" src="https://s3-alpha-sig.figma.com/img/4852/d43d/94dea3819e3eeea1a35e77b3efe5b138?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=q5t2u6Hzm3PkAkI2QFCV~ggEL500rUC7DiThoarKPEDrXRNEdZl83MVPw66xTzOPa5V7vcjZt02aqZcdz94Sd1BVpYN8dfdDdmvzSdq0RPTPIVZuwL92jOOjLBjNkdtCYAxBaypfs5fGwP0d3UXdR1f-4nzpPk267sRZhAsup6IcfYJ78pN6-YEet~LBUGxpsYEzoLkePeYs13jVlH8ufKTBzUjDcrc6mu~0JB4E~I5TtBYYE6MfQ9BS6M0Htkgh465yH8HUElvQkKS7yKmqSdS4RoVVDcWijWrN~47dE-e~sVoSXtETkXzHkx9W0uVgo6cm6DU5ZaxTx-5-hP64mA__"
+                    alt="Avatar">
+                <div class="movie-details">
+                    <div class="movie-title">Avatar</div>
+                    <p class="movie-details">2009</p>
+                    <p class="movie-tags">#action #sci-fi</p>
+                </div>
+                </button>
+            </div>
+
+            <div class="movie-container">
+                <button class="movie-button" onclick="window.location.href='http://127.0.0.1:8000/film/9'">
+                <img class="movie-poster" src="https://s3-alpha-sig.figma.com/img/15eb/b608/afb7331b4da6c23b3361c893d939cf44?Expires=1741564800&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Pjwyw4~8mNaWuufgZ99I4cN5Z2SV5Iyl3nVcISUyoZRBqbkJRLPrTNhV~MSrhMTLop-wRZVcdyx5hFTPhVKQ~2pepNYvwaniykwe1bAK-VEeEzmleItxZRv3nDrB4U2o-ZyhJICQaTCg5OmWdCaPS1EvM8azQvFkLNXxTcGNgCP2j92M2GKJXfERM62AAeIuVLeDzFaI~nYGbo~ISD7acZSuuJFb45ShdTaLMwO2HO21qOTlba~6X-G543gsL59SMq092zVBw3GEEB-71fEOfLZOrot076-tIB6XPa3KIEtaAjgenTlv2w3k0Mk1qOYTsfE6ePGg-UED~2KuGefjXg__"
+                    alt="FNAF">
+                <div class="movie-details">
+                    <div class="movie-title">FNAF</div>
+                    <p class="movie-details">2023</p>
+                    <p class="movie-tags">#horror #mystery</p>
+            </div>
+                </button>
+        </div>
+    </div>
+</div>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Movie Library</title>
+<style>
+body {
+  background-color: #1a293d; /* Approximate background color */
+  color: white;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  background-color: #263b54; /* Header background color */
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-bar {
+  flex: 0.6;
+  margin: 0 auto;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #445c79;
+  background-color: #2e4461;
+  color: white;
+  border-radius: 5px;
+}
+
+.login-button {
+  padding: 8px 15px;
+  background-color: #3e5a7e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.movie-container {
+  display: flex;
+  overflow-x: auto; /* Enables horizontal scrolling if needed */
+  padding: 20px;
+}
+
+.movie-poster {
+  width: 150px; /* Adjust as needed */
+  margin-right: 10px; /* Space between posters */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.movie-poster:last-child {
+    margin-right:0;
+}
+.profile-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #557799; /* Approximate color */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px; /* Adjust as needed */
+    margin-left: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="search-bar">
+    <input type="text" placeholder="фильмы, сериалы, персоны">
+  </div>
+  <div>
+    <button class="login-button">Войти</button>
+    <span class="profile-icon">👤</span>
+  </div>
+</div>
+
+<div class="movie-container">
+  <img class="movie-poster" src="https://avatars.mds.yandex.net/i?id=fd55b2a7aeb8ce8b08fb8be019c5c7a9c0c1077d-8391840-images-thumbs&n=13" alt="Jaws">
+  <img class="movie-poster" src="https://via.placeholder.com/150x225/007bff/FFFFFF?text=Avengers" alt="Avengers">
+  <img class="movie-poster" src="https://via.placeholder.com/150x225/007bff/FFFFFF?text=Penguins" alt="Penguins">
+  <img class="movie-poster" src="https://via.placeholder.com/150x225/007bff/FFFFFF?text=Harry Potter" alt="Harry Potter">
+  <img class="movie-poster" src="https://via.placeholder.com/150x225/007bff/FFFFFF?text=Alita" alt="Alita">
+  <img class="movie-poster" src="https://via.placeholder.com/150x225/007bff/FFFFFF?text=Joker" alt="Joker">
+  <img class="movie-poster" src="https://via.placeholder.com/150x225/007bff/FFFFFF?text=Dragon" alt="Dragon">
+  <img class="movie-poster" src="https://via.placeholder.com/150x225/007bff/FFFFFF?text=Avatar" alt="Avatar">
+  <img class="movie-poster" src="https://via.placeholder.com/150x225/007bff/FFFFFF?text=Five Nights" alt="Five Nights">
+
+</div>
+
+</body>
+</html>

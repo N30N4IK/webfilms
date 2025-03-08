@@ -1,25 +1,34 @@
-from sqlalchemy.orm import Mapped
-from app.database import Base, str_uniq, int_pk
+from sqlalchemy import create_engine, Column, Integer, String, Boolean
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
+from sqlalchemy.orm import sessionmaker
+from dotenv import load_dotenv
+import os
 
+from app.config import get_db_url
+
+DATABASE_URL = get_db_url()
+
+engine = create_async_engine(DATABASE_URL, echo=True)
+
+Base = declarative_base()
 
 class User(Base):
-    id: Mapped[int_pk]
-    first_name: Mapped[str]
-    phone_number: Mapped[str_uniq]
-    email: Mapped[str]
+    __tablename__ = 'users' 
+
+    id = Column(Integer, primary_key = True, index = True)
+    phone = Column(String, unique=True, index=True, nullable=True)
+    email = Column(String, unique=True, index=True, nullable=True)
+    is_active = Column(Boolean, default=True)
 
 
-    def __str__(self):
-        return (f'{self.__class__.__name__}(id={self.id}), '
-                f"first_name={self.first_name!r}")
-    
-    def __repr__(self):
-        return str(self)
-    
-    def to_dict(self):
-        return{
-        "id": self.id,
-        "first_name": self.first_name,
-        "phone_number": self.phone_number,
-        "email": self.email,
-        }   
+async def get_db():
+    async_session = sessionmaker(
+        engine, class_=AsyncSession, expire_on_commit=False
+    )
+    async with async_session() as session:
+        yield session
+
+async def create_db_and_tables():
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
