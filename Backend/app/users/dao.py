@@ -13,11 +13,10 @@ class UserDAO(BaseDAO):
             users = await session.execute(query)
             return users.scalars().all()
     @staticmethod
-    async def add_user(id: int, first_name: str, phone_number: str, email: str) -> User:
+    async def add_user(id: int, phone_number: str, email: str) -> User:
         async with async_session_maker() as session:
             new_user = User (
                 id=id,
-                first_name=first_name,
                 phone_number=phone_number,
                 email=email,
             )

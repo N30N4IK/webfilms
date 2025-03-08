@@ -20,10 +20,11 @@ async def get_search_page(request: Request, q: str = None):
     search_term = q if q else ""
     return templates.TemplateResponse('searchPage.html', {'request': request, "search_term": search_term})
 
-@router.get('/movies/{movie_id}')
-async def get_page_description_film(request: Request, movie_id: int):
-    movie = next((m for m in movies if m['id'] == movie_id))
-    if movie is None:
-        raise HTTPException(status_code=404, detail='Фильм не найден')
+@router.get('/movies')
+async def get_page_description_film(request: Request, id: int = None):
+    search_term = id if id else ""
+    # movie = next((m for m in movies if m['id'] == movie_id))
+    # if movie is None:
+    #     raise HTTPException(status_code=404, detail='Фильм не найден')
     
-    return templates.TemplateResponse("description.html", {"request": request, "movie": movie})
+    return templates.TemplateResponse("description.html", {"request": request, "search_term": search_term})
